@@ -1,0 +1,14 @@
+<%= form_for(@item) do |form| %>
+
+  <div>
+  <%= form.label :name, "Name of Item:" %>
+  <%= form.text_field :name %>
+  </div>
+  
+  <div>
+  <%= form.label :price, "Price:" %>
+  <%= form.text_field :price %>
+  </div>
+  
+  <%= form.submit %>
+<% end %>

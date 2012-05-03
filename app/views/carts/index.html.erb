@@ -1,0 +1,11 @@
+<h1>Your Shopping Cart</h1>
+<ul>
+  <% @carts.each do |cart|%>
+    <li><%= cart.name %> | 
+      $<%= cart.price %> |
+      <%= cart.quantity%>
+    </li>
+  <% end %>
+</ul>
+<br>
+<%= link_to "Return", items_url %>

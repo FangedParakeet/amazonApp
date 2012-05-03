@@ -1,0 +1,7 @@
+<h1><%= @item.name %></h1>
+<h2>Price: <%= @item.price %></h2>
+<p><%= link_to "Edit Item", edit_item_url(@item.id) %></p>
+<p><%= link_to "Delete Item", delete_item_url(@item.id) %></p>
+<p><%= link_to "Add to Cart", carts_url%></p>
+<br>
+<%= link_to "Return", items_url%>
