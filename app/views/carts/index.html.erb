@@ -2,10 +2,14 @@
 <ul>
   <% @carts.each do |cart|%>
     <li><%= cart.name %> | 
-      $<%= cart.price %> |
-      <%= cart.quantity%>
+      $<%= cart.price %>
+      <%= form_tag(cart_url(cart.id), :method => :put) do %> <!-- Sends cart.id instead of cart.name to distinguish "Update Quantity" request from "Add to Cart": see update method in carts_controller -->
+        <%= text_field_tag :quantity, cart.quantity%> 
+      <%= submit_tag "Update quantity"%>
+      <% end %>
     </li>
   <% end %>
 </ul>
+<p>Total = $<%= @total%>
 <br>
 <%= link_to "Return", items_url %>

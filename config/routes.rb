@@ -13,5 +13,6 @@ AmazonApp::Application.routes.draw do
   
   
   get "cart", :controller => "carts", :action => "index", :as => :carts
+  put "cart/:id", :controller => "carts", :action => "update", :as => :cart
 
 end
